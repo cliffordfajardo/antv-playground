@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: slategrey !important;
+  padding-left: 150px;
+}
+
+div a {
+  color: black
+}
