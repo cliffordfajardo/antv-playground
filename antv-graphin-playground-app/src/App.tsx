@@ -2,12 +2,15 @@ import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Example1 } from "./apps/example1/Example1";
+import { GraphinProvider } from "./apps/example10/context/GraphinProvider";
+import { Example10 } from "./apps/example10/Example10";
 import { Example2 } from "./apps/example2/Example2";
 import { Example3 } from "./apps/example3/Example3";
 import { Example4 } from "./apps/example4/Example4";
 import { Example5 } from "./apps/example5/Example5";
 import { Example6 } from "./apps/example6/Example6";
 import { Example7 } from "./apps/example7/Example7";
+import { Example9 } from "./apps/example9/Example9";
 
 function App() {
   return (
@@ -34,6 +37,12 @@ function App() {
         <div>
           <Link to="/example7">Example 7</Link>
         </div>
+        <div>
+          <Link to="/example9">Example 9</Link>
+        </div>
+        <div>
+          <Link to="/example10">Example 10</Link>
+        </div>
 
         <Routes>
           <Route path="example1" element={<Example1 />} />
@@ -43,6 +52,17 @@ function App() {
           <Route path="example5" element={<Example5 />} />
           <Route path="example6" element={<Example6 />} />
           <Route path="example7" element={<Example7 />} />
+          <Route path="example9" element={<Example9 />} />
+          <Route
+            path="example10"
+            element={
+              <>
+                <GraphinProvider>
+                  <Example10 />
+                </GraphinProvider>
+              </>
+            }
+          />
         </Routes>
       </main>
     </div>
